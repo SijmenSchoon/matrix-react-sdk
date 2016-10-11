@@ -109,7 +109,7 @@ export function getScopedRTDecorators(scope: any): CompositeDecorator {
             return <span className="mx_UserPill">{avatar}{props.children}</span>;
         }
     };
-    
+
     let roomDecorator = {
         strategy: (contentBlock, callback) => {
             findWithRegex(ROOM_REGEX, contentBlock, callback);
@@ -146,9 +146,9 @@ export function getScopedMDDecorators(scope: any): CompositeDecorator {
             </a>
         )
     });
-    markdownDecorators.push(emojiDecorator);
-
-    return markdownDecorators;
+    // markdownDecorators.push(emojiDecorator);
+    // TODO Consider renabling "syntax highlighting" when we can do it properly
+    return [emojiDecorator];
 }
 
 /**

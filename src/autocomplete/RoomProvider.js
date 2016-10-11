@@ -52,12 +52,12 @@ export default class RoomProvider extends AutocompleteProvider {
     getName() {
         return '💬 Rooms';
     }
-    
+
     static getInstance() {
         if (instance == null) {
             instance = new RoomProvider();
         }
-        
+
         return instance;
     }
 
@@ -65,9 +65,5 @@ export default class RoomProvider extends AutocompleteProvider {
         return <div className="mx_Autocomplete_Completion_container_pill">
             {completions}
         </div>;
-    }
-
-    shouldForceComplete(): boolean {
-        return true;
     }
 }
